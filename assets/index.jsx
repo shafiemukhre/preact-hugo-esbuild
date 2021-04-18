@@ -1,4 +1,4 @@
-import { h, render } from 'preact';
+import { h, Fragment, render } from 'preact';
 import { useState } from 'preact/hooks';
 
 const Counter = () => {
@@ -8,11 +8,11 @@ const Counter = () => {
   const decrement = () => setCount((currentCount) => currentCount - 1);
 
   return (
-    <div>
+    <>
       <p>Count: {count}</p>
       <button onClick={increment}>Increment</button>
       <button onClick={decrement}>Decrement</button>
-    </div>
+    </>
   )
 }
 

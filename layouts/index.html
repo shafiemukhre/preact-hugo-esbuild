@@ -3,9 +3,8 @@
 <head>
   <title>{{ .Title }}</title>
   {{ with resources.Get "index.jsx" }}
-
   {{ $defines := dict "process.env.NODE_ENV" "\"development\"" "process.env.BaseURL" (printf `"%s"` $.Site.BaseURL) }}
-  {{ $options := dict "defines" $defines "JSXFactory" "h"}}
+  {{ $options := dict "defines" $defines "JSXFactory" "h" "JSXFragment" "Fragment"}}
   {{ $script := . | js.Build $options }}
   <script src="{{ $script.RelPermalink }}" defer></script>
   {{end}}
