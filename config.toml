@@ -1,4 +1,4 @@
-baseURL = "preact-hugo-esbuild.netlify.app"
+baseURL = "https://preact-hugo-esbuild.netlify.app"
 languageCode = "en-us"
 title = "Hugo preact esbuild minimal example"
 disableKinds = ["sitemap", "taxonomy", "term", "RSS"]
