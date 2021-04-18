@@ -1,0 +1,6 @@
+languageCode: en
+title: Hugo preact esbuild minimal example
+disableKinds:
+  - taxonomyTerm
+  - sitemap
+  - RSS
