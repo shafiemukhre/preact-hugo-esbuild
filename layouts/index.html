@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <title>{{ .Title }}</title>
+  {{ with resources.Get "index.jsx" }}
+
+  {{ $defines := dict "process.env.NODE_ENV" "\"development\"" "process.env.BaseURL" (printf `"%s"` $.Site.BaseURL) }}
+  {{ $options := dict "defines" $defines "JSXFactory" "h"}}
+  {{ $script := . | js.Build $options }}
+  <script src="{{ $script.RelPermalink }}" defer></script>
+  {{end}}
+</head>
+<body>
+  <h1>Hello World</h1>
+  <p>Render Preact component in a single root</p>
+  <div id="root"></div>
+  <p>Render Preact component in multiple roots</p>
+  <div class="widget"></div>
+  <div class="widget"></div>
+
+</body>
+</html>
